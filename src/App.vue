@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> -
-    <router-link to="/basket">Shopping Bag (0)</router-link> 
+    <router-link to="/basket">Shopping Bag (0)</router-link> -
+    <router-link to="/product">Product</router-link> 
   </div>
   <router-view/>
 </template>
@@ -9,7 +10,9 @@
 <script>
 
   export default {
-
+created(){
+ this.$store.dispatch('loadProducts')
+}
   }
   
 </script>
@@ -41,6 +44,12 @@
   a {
     color: white;
     text-decoration: none;
+    border: 0.05rem solid white;
+    border-radius: 0.25rem;
+    padding: 0.1rem;
+    :hover{
+      color:red;
+    }
 
     &.router-link-exact-active {
       color: #007bff;

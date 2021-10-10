@@ -33,9 +33,10 @@ export default {
       
     }
   },
-
-  methods: {
-   
+  computed: {
+        count () {
+      return this.$store.state.products
+  }
   }
 }
 </script>
